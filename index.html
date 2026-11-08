@@ -1,0 +1,330 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mythsteel — ดาวน์โหลด</title>
+<meta name="description" content="Mythsteel: เกมแอ็กชันยุคกลางแฟนตาซี สงครามสองกองทัพ ตีเมือง ลานประลอง เล่นคนเดียว LAN หรือออนไลน์">
+<link rel="icon" href="site/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Noto+Sans+Thai:wght@400;600&family=Noto+Serif+Thai:wght@600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0f0c0b;
+  --panel: #1a1513;
+  --panel-2: #231c18;
+  --line: #3b2f26;
+  --ink: #efe6d6;
+  --ink-dim: #b5a790;
+  --gold: #d8ae62;
+  --ember: #c2582a;
+  --ok: #8fbf8a;
+  --radius: 14px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg) radial-gradient(ellipse at 50% -10%, #3a1a0d 0%, transparent 60%) no-repeat;
+  color: var(--ink);
+  font: 16px/1.65 "Noto Sans Thai", system-ui, sans-serif;
+}
+a { color: var(--gold); }
+.wrap { max-width: 1080px; margin: 0 auto; padding: 0 16px; }
+header.top {
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 16px 0;
+}
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--ink); }
+.brand img { width: 44px; height: 44px; border-radius: 10px; }
+.brand span { font: 800 22px/1 "Cinzel", serif; letter-spacing: .08em; }
+.lang { display: flex; gap: 6px; }
+.lang button {
+  background: transparent; border: 1px solid var(--line); color: var(--ink-dim);
+  padding: 6px 12px; border-radius: 999px; cursor: pointer; font: inherit; font-size: 14px;
+}
+.lang button[aria-pressed="true"] { border-color: var(--gold); color: var(--gold); }
+
+.hero { display: grid; grid-template-columns: 1.05fr 1fr; gap: 32px; align-items: center; padding: 28px 0 40px; }
+.hero h1 { font: 800 clamp(40px, 7vw, 76px)/1 "Cinzel", serif; letter-spacing: .06em; margin: 0 0 8px;
+  background: linear-gradient(180deg, #f6e2b5, #b98a45); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.hero .sub { font: 600 20px/1.4 "Noto Serif Thai", serif; color: var(--gold); margin: 0 0 14px; }
+.hero p { color: var(--ink-dim); margin: 0 0 22px; }
+.hero .shot { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); box-shadow: 0 20px 60px rgba(0,0,0,.6); }
+.hero .shot img { display: block; width: 100%; height: auto; }
+.badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 22px; }
+.badge { font-size: 13px; padding: 4px 10px; border-radius: 999px; background: var(--panel-2); border: 1px solid var(--line); color: var(--ink-dim); }
+
+.cta { display: flex; flex-wrap: wrap; gap: 10px; }
+.btn {
+  display: inline-flex; align-items: center; gap: 10px; text-decoration: none;
+  padding: 12px 18px; border-radius: 12px; font-weight: 600; color: #1b120c;
+  background: linear-gradient(180deg, #e7c27b, #b98a45); border: 1px solid #f0d49a;
+}
+.btn.ghost { background: transparent; color: var(--ink); border-color: var(--line); }
+.btn small { font-weight: 400; opacity: .75; }
+
+section { padding: 36px 0; border-top: 1px solid var(--line); }
+section h2 { font: 800 28px/1.2 "Cinzel", "Noto Serif Thai", serif; letter-spacing: .04em; margin: 0 0 6px; }
+section .lead { color: var(--ink-dim); margin: 0 0 22px; }
+
+.platforms { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 20px; display: flex; flex-direction: column; }
+.card h3 { margin: 0 0 4px; font: 600 20px/1.3 "Noto Serif Thai", serif; }
+.card .meta { color: var(--ink-dim); font-size: 14px; margin-bottom: 14px; }
+.card ol { margin: 0 0 18px; padding-left: 20px; color: var(--ink); }
+.card ol li { margin-bottom: 6px; }
+.card .btn { margin-top: auto; justify-content: center; }
+.card.soon { opacity: .85; }
+.card .tag { display: inline-block; font-size: 12px; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--ember); color: #f0a07a; margin-left: 6px; vertical-align: middle; }
+kbd { font: 600 13px/1 ui-monospace, monospace; background: var(--panel-2); border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 6px; padding: 2px 6px; }
+
+.gallery { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.gallery figure { margin: 0; border-radius: 10px; overflow: hidden; border: 1px solid var(--line); background: var(--panel); }
+.gallery img { display: block; width: 100%; aspect-ratio: 16 / 9; object-fit: cover; }
+.gallery figcaption { font-size: 13px; color: var(--ink-dim); padding: 8px 10px; }
+
+.modes { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.mode { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 16px 18px; }
+.mode b { color: var(--gold); }
+
+.twocol { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.box { background: var(--panel); border: 1px solid var(--line); border-radius: var(--radius); padding: 18px 20px; }
+.box h3 { margin: 0 0 10px; font: 600 18px/1.3 "Noto Serif Thai", serif; }
+.box ul, .box ol { margin: 0; padding-left: 20px; }
+.box li { margin-bottom: 6px; }
+table.keys { width: 100%; border-collapse: collapse; font-size: 15px; }
+table.keys td { padding: 6px 4px; border-bottom: 1px solid var(--line); vertical-align: top; }
+table.keys td:first-child { white-space: nowrap; width: 42%; }
+
+footer { padding: 30px 0 50px; color: var(--ink-dim); font-size: 14px; border-top: 1px solid var(--line); }
+
+[data-en] { display: none; }
+html[lang="en"] [data-th] { display: none; }
+html[lang="en"] [data-en] { display: revert; }
+
+@media (max-width: 860px) {
+  .hero { grid-template-columns: 1fr; }
+  .platforms { grid-template-columns: 1fr; }
+  .gallery { grid-template-columns: repeat(2, 1fr); }
+  .modes, .twocol { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="#"><img src="site/icon.png" alt=""><span>MYTHSTEEL</span></a>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" data-set-lang="th" aria-pressed="true">ไทย</button>
+      <button type="button" data-set-lang="en" aria-pressed="false">English</button>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div>
+      <h1>MYTHSTEEL</h1>
+      <p class="sub" data-th>เหล็กกล้าแห่งตำนาน</p>
+      <p class="sub" data-en>Steel of legend</p>
+      <p data-th>เกมแอ็กชันยุคกลางแฟนตาซี ฟันตามทิศเมาส์ ปัดป้อง หลอกล่อ สงครามสองกองทัพนับร้อยคน ดันรถกระทุ้งทลายประตูปราสาท สังหารกษัตริย์ทรราช ลานประลอง และล่าอสูร เล่นคนเดียว กับเพื่อนในวง LAN หรือออนไลน์</p>
+      <p data-en>A dark-fantasy medieval action game: aimed cuts, parries and feints, two armies of a hundred men, a battering ram for the castle gate and a usurper king to slay, the arena, and monster hunts. Play solo, over LAN or online.</p>
+      <div class="badges">
+        <span class="badge">v0.1.0</span>
+        <span class="badge" data-th>ไทย / English</span><span class="badge" data-en>Thai / English</span>
+        <span class="badge">Windows · macOS</span>
+        <span class="badge" data-th>LAN + ออนไลน์</span><span class="badge" data-en>LAN + online</span>
+      </div>
+      <div class="cta">
+        <a class="btn" href="https://github.com/KieKoongDev/mythsteel/releases/latest/download/Mythsteel-Windows.zip">⬇ Windows <small>.zip</small></a>
+        <a class="btn" href="https://github.com/KieKoongDev/mythsteel/releases/latest/download/Mythsteel-macOS.zip">⬇ macOS <small>.zip</small></a>
+        <a class="btn ghost" href="#install"><span data-th>วิธีติดตั้ง</span><span data-en>How to install</span></a>
+      </div>
+    </div>
+    <div class="shot"><img src="site/siege.jpg" alt="Siege of Harrow: pushing the ram toward the castle gate" width="1280" height="720"></div>
+  </div>
+
+  <section id="install">
+    <h2 data-th>ดาวน์โหลดและติดตั้ง</h2><h2 data-en>Download and install</h2>
+    <p class="lead" data-th>ไม่ต้องติดตั้งอะไรเพิ่ม แตกไฟล์แล้วเปิดเล่นได้เลย ไฟล์ใหญ่ประมาณ 500 MB</p>
+    <p class="lead" data-en>Nothing else to install: unzip and play. About 500 MB.</p>
+    <div class="platforms">
+      <div class="card">
+        <h3>Windows</h3>
+        <div class="meta">Windows 10 / 11 · 64-bit</div>
+        <ol data-th>
+          <li>กดดาวน์โหลด <b>Mythsteel-Windows.zip</b></li>
+          <li>คลิกขวาที่ไฟล์ → <b>Extract All</b> (แตกไฟล์)</li>
+          <li>เปิด <b>Mythsteel.exe</b></li>
+          <li>ถ้าขึ้น “Windows protected your PC” กด <b>More info → Run anyway</b> (เกมยังไม่ได้ซื้อใบรับรอง)</li>
+          <li>เล่นออนไลน์ครั้งแรก Windows Firewall จะถาม ให้กด <b>Allow</b></li>
+        </ol>
+        <ol data-en>
+          <li>Download <b>Mythsteel-Windows.zip</b></li>
+          <li>Right-click it → <b>Extract All</b></li>
+          <li>Open <b>Mythsteel.exe</b></li>
+          <li>If “Windows protected your PC” appears, click <b>More info → Run anyway</b> (the game is not code-signed yet)</li>
+          <li>The first time you play online, allow it through Windows Firewall</li>
+        </ol>
+        <a class="btn" href="https://github.com/KieKoongDev/mythsteel/releases/latest/download/Mythsteel-Windows.zip">⬇ <span data-th>ดาวน์โหลดสำหรับ Windows</span><span data-en>Download for Windows</span></a>
+      </div>
+      <div class="card">
+        <h3>macOS</h3>
+        <div class="meta">macOS 11+ · Apple Silicon &amp; Intel</div>
+        <ol data-th>
+          <li>กดดาวน์โหลด <b>Mythsteel-macOS.zip</b> แล้วดับเบิลคลิกเพื่อแตกไฟล์</li>
+          <li>ลาก <b>Mythsteel.app</b> ไปไว้ใน <b>Applications</b></li>
+          <li>ครั้งแรก: <b>คลิกขวา (Control-คลิก) → Open → Open</b></li>
+          <li>ถ้ายังเปิดไม่ได้: <b>System Settings → Privacy &amp; Security</b> เลื่อนลงกด <b>Open Anyway</b></li>
+        </ol>
+        <ol data-en>
+          <li>Download <b>Mythsteel-macOS.zip</b> and double-click to unzip</li>
+          <li>Drag <b>Mythsteel.app</b> into <b>Applications</b></li>
+          <li>First launch: <b>right-click (Control-click) → Open → Open</b></li>
+          <li>Still blocked? <b>System Settings → Privacy &amp; Security</b>, scroll down, <b>Open Anyway</b></li>
+        </ol>
+        <a class="btn" href="https://github.com/KieKoongDev/mythsteel/releases/latest/download/Mythsteel-macOS.zip">⬇ <span data-th>ดาวน์โหลดสำหรับ macOS</span><span data-en>Download for macOS</span></a>
+      </div>
+      <div class="card soon">
+        <h3><span data-th>เล่นบนเบราว์เซอร์</span><span data-en>Play in the browser</span><span class="tag" data-th>เร็ว ๆ นี้</span><span class="tag" data-en>Coming later</span></h3>
+        <div class="meta">Chrome · Edge · Firefox</div>
+        <p data-th>เวอร์ชันเบราว์เซอร์ต้องใช้ไฟล์ที่เล็กลงมาก (ตอนนี้ข้อมูลเกม ~480 MB) และโหมดกราฟิกที่เบากว่า จะตามมาในเวอร์ชันถัดไป ตอนนี้แนะนำดาวน์โหลดลงเครื่อง</p>
+        <p data-en>A browser version needs a much smaller download (the game data is ~480 MB today) and a lighter renderer. It is planned for a later version; for now, please download the game.</p>
+        <a class="btn ghost" href="#install" aria-disabled="true"><span data-th>ยังไม่พร้อม</span><span data-en>Not available yet</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 data-th>ภาพจากในเกม</h2><h2 data-en>From the game</h2>
+    <div class="gallery">
+      <figure><img src="site/siege.jpg" alt="" loading="lazy"><figcaption data-th>ตีเมือง: ดันรถกระทุ้งไปที่ประตู</figcaption><figcaption data-en>Siege: push the ram to the gate</figcaption></figure>
+      <figure><img src="site/knight.jpg" alt="" loading="lazy"><figcaption data-th>อัศวินทอง ในศึกที่ลานคบเพลิง</figcaption><figcaption data-en>The Gilded Knight in the Pit</figcaption></figure>
+      <figure><img src="site/archer.jpg" alt="" loading="lazy"><figcaption data-th>พรานธนู ยิงลูกธนูโค้งตามแรงโน้มถ่วง</figcaption><figcaption data-en>Ranger: arrows fly on a real arc</figcaption></figure>
+      <figure><img src="site/arena-boss.jpg" alt="" loading="lazy"><figcaption data-th>ล่าอสูรในโคลอสเซียม</figcaption><figcaption data-en>Monster hunt in the Colosseum</figcaption></figure>
+    </div>
+  </section>
+
+  <section>
+    <h2 data-th>โหมดเกม</h2><h2 data-en>Modes</h2>
+    <div class="modes">
+      <div class="mode" data-th><b>สงครามยึดพื้นที่</b> — สองกองทัพแย่งจุด A B C ใครถือครองนานกว่าชนะ</div>
+      <div class="mode" data-en><b>Territory war</b> — two armies fight over zones A, B and C; hold more of them to win</div>
+      <div class="mode" data-th><b>ตีเมือง</b> — ดันรถกระทุ้ง ทลายประตู ยึดลานกลาง แล้วสังหารกษัตริย์ทรราช</div>
+      <div class="mode" data-en><b>Siege</b> — push the ram, break the gate, take the courtyard, slay the Usurper King</div>
+      <div class="mode" data-th><b>ป้องกันป้อม</b> — ยืนหยัดในหอคอยผ่านศัตรูทุกระลอก</div>
+      <div class="mode" data-en><b>Hold the keep</b> — survive every wave inside the castle</div>
+      <div class="mode" data-th><b>ลานประลอง</b> — ดวล ตะลุมบอน ร่วมมือต้านฝูง ล่าอสูร ในลานคบเพลิง โคลอสเซียม หรือบนเรือไวกิ้ง</div>
+      <div class="mode" data-en><b>Arena</b> — duels, free-for-all, co-op against the horde and monster hunts, in the torchlit ring, the Colosseum or on a Viking longship</div>
+      <div class="mode" data-th><b>ดันเจี้ยนและทุ่งราบ</b> — ตะลุยด่าน เก็บแต้มจากการสังหารไว้ซื้อของกับพ่อค้า</div>
+      <div class="mode" data-en><b>Dungeons and fields</b> — fight through, earn points from kills and spend them at the merchant</div>
+      <div class="mode" data-th><b>เลือกอาชีพ อาวุธ ชุด</b> — อัศวิน นักรบคลั่ง จอมเวท นักฆ่า พรานธนู ดาบ ขวาน ธนู หน้าไม้ คทา</div>
+      <div class="mode" data-en><b>Classes, weapons, looks</b> — knight, berserker, mage, rogue, ranger; swords, axes, bow, crossbow, staff</div>
+    </div>
+  </section>
+
+  <section>
+    <h2 data-th>เล่นกับเพื่อน (LAN / ออนไลน์)</h2><h2 data-en>Play with friends (LAN / online)</h2>
+    <div class="twocol">
+      <div class="box">
+        <h3 data-th>คนเปิดห้อง (Host)</h3><h3 data-en>The host</h3>
+        <ol data-th>
+          <li>หน้าแรก → <b>ห้อง</b> → <b>+ สร้างห้อง</b> เลือกตัวละคร</li>
+          <li>มุมขวาบนจะขึ้น <b>Room code</b> (เช่น <kbd>K7PQ-3M2X</kbd>) และ IP ในวง LAN ส่งให้เพื่อน</li>
+          <li>เกมจะขอให้เราเตอร์เปิดพอร์ต UDP 7777 ให้อัตโนมัติ (UPnP)</li>
+        </ol>
+        <ol data-en>
+          <li>Home → <b>Rooms</b> → <b>+ Create room</b>, pick your fighter</li>
+          <li>A <b>room code</b> (e.g. <kbd>K7PQ-3M2X</kbd>) and your LAN address show top right: send them to your friends</li>
+          <li>The game asks your router to open UDP port 7777 by itself (UPnP)</li>
+        </ol>
+      </div>
+      <div class="box">
+        <h3 data-th>เพื่อนที่เข้าร่วม</h3><h3 data-en>Joining</h3>
+        <ol data-th>
+          <li>หน้าแรก → <b>ห้อง</b> → พิมพ์ room code (ออนไลน์) หรือ IP ของเพื่อน (วงเดียวกัน) → <b>เข้าร่วม</b></li>
+          <li>ถ้าเชื่อมไม่ได้: ให้ host เปิด Port forwarding UDP 7777 ที่เราเตอร์ หรือทั้งคู่ใช้ VPN แลนเสมือนฟรี (Radmin VPN, ZeroTier, Tailscale) แล้วพิมพ์ IP ของ VPN</li>
+          <li>เล่นได้สูงสุด 4 คน ที่เหลือเป็นทหารคอมพิวเตอร์</li>
+        </ol>
+        <ol data-en>
+          <li>Home → <b>Rooms</b> → type the room code (online) or your friend's IP (same network) → <b>Join</b></li>
+          <li>Can't connect? The host forwards UDP 7777 on the router, or you both use a free virtual LAN (Radmin VPN, ZeroTier, Tailscale) and type the VPN address</li>
+          <li>Up to 4 players; the armies are the computer's</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 data-th>การควบคุม</h2><h2 data-en>Controls</h2>
+    <div class="twocol">
+      <div class="box">
+        <table class="keys">
+          <tr><td><kbd>W A S D</kbd></td><td data-th>เดิน</td><td data-en>Move</td></tr>
+          <tr><td><span data-th>คลิกซ้าย</span><span data-en>Left click</span></td><td data-th>ฟันแนวนอน</td><td data-en>Horizontal slash</td></tr>
+          <tr><td><span data-th>ล้อเมาส์ ขึ้น / ลง</span><span data-en>Wheel up / down</span></td><td data-th>ฟันลงจากบน / แทง</td><td data-en>Overhead / stab</td></tr>
+          <tr><td><span data-th>คลิกขวา</span><span data-en>Right click</span></td><td data-th>ป้องกัน (จังหวะพอดี = ปัด)</td><td data-en>Block (on time = parry)</td></tr>
+          <tr><td><kbd>Shift</kbd></td><td data-th>พุ่งหลบ</td><td data-en>Dash</td></tr>
+          <tr><td><kbd>G</kbd> / <span data-th>ปุ่มเมาส์ข้าง</span><span data-en>side button</span></td><td data-th>ถีบ</td><td data-en>Kick</td></tr>
+        </table>
+      </div>
+      <div class="box">
+        <table class="keys">
+          <tr><td><kbd>X</kbd></td><td data-th>โห่ร้องรบ (ทหารรอบตัวขานรับ)</td><td data-en>Battle cry (your soldiers answer)</td></tr>
+          <tr><td><kbd>V</kbd></td><td data-th>สลับมุมกล้อง: บุคคลที่สาม / กว้าง / บุคคลที่หนึ่ง</td><td data-en>Camera: third person / wide / first person</td></tr>
+          <tr><td><kbd>1</kbd>–<kbd>6</kbd></td><td data-th>ทักษะ</td><td data-en>Skills</td></tr>
+          <tr><td><kbd>B</kbd></td><td data-th>เบิกม้า มังกร ชุด (ใช้แต้ม BP)</td><td data-en>Requisitions: horse, dragon, outfits (BP)</td></tr>
+          <tr><td><kbd>E</kbd> · <kbd>Q</kbd></td><td data-th>ใช้ของ / ขึ้นม้า · ดื่มยา</td><td data-en>Interact / mount · drink a potion</td></tr>
+          <tr><td><kbd>Esc</kbd></td><td data-th>เมนู (เปลี่ยนภาษาไทย/อังกฤษได้ที่ตั้งค่า)</td><td data-en>Menu (switch Thai/English in Settings)</td></tr>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 data-th>สเปกเครื่อง</h2><h2 data-en>System requirements</h2>
+    <div class="twocol">
+      <div class="box">
+        <h3 data-th>ขั้นต่ำ</h3><h3 data-en>Minimum</h3>
+        <ul>
+          <li>Windows 10 64-bit / macOS 11</li>
+          <li data-th>การ์ดจอรองรับ Vulkan (GTX 1050, RX 560, Apple M1 ขึ้นไป)</li><li data-en>Vulkan-capable GPU (GTX 1050, RX 560, Apple M1 or better)</li>
+          <li>RAM 8 GB · <span data-th>พื้นที่ว่าง</span><span data-en>disk</span> 2 GB</li>
+        </ul>
+      </div>
+      <div class="box">
+        <h3 data-th>แนะนำ (สงครามร้อยคนลื่น 60 FPS)</h3><h3 data-en>Recommended (60 FPS in full battles)</h3>
+        <ul>
+          <li>RTX 3060 / RX 6600 <span data-th>ขึ้นไป</span><span data-en>or better</span></li>
+          <li>RAM 16 GB</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Mythsteel v0.1.0 · <span data-th>เกมยังอยู่ในช่วงพัฒนา ถ้าเจอปัญหาแจ้งได้ที่</span><span data-en>Early version; report problems at</span> <a href="https://github.com/KieKoongDev/mythsteel/issues">GitHub Issues</a></p>
+    <p data-th>ฟอนต์ Cinzel และ Noto ใช้สัญญาอนุญาต SIL Open Font License</p>
+    <p data-en>Cinzel and Noto fonts are under the SIL Open Font License.</p>
+  </footer>
+</div>
+<script>
+(function () {
+  var root = document.documentElement;
+  function set(lang) {
+    root.lang = lang;
+    document.querySelectorAll("[data-set-lang]").forEach(function (b) {
+      b.setAttribute("aria-pressed", String(b.dataset.setLang === lang));
+    });
+    try { localStorage.setItem("mythsteel-lang", lang); } catch (e) {}
+  }
+  var saved = null;
+  try { saved = localStorage.getItem("mythsteel-lang"); } catch (e) {}
+  set(saved || ((navigator.language || "").toLowerCase().indexOf("th") === 0 ? "th" : "en"));
+  document.querySelectorAll("[data-set-lang]").forEach(function (b) {
+    b.addEventListener("click", function () { set(b.dataset.setLang); });
+  });
+})();
+</script>
+</body>
+</html>
