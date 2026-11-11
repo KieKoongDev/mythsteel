@@ -1,6 +1,6 @@
 {
-	"version": "0.2.0",
-	"pck": "https://github.com/KieKoongDev/mythsteel/releases/download/v0.2.0/Mythsteel.pck",
-	"exe": "https://github.com/KieKoongDev/mythsteel/releases/download/v0.2.0/Mythsteel.exe",
-	"notes": "Mythsteel v0.2: Conquest, samurai, new weapons and moves, controller support, new icon"
+	"version": "0.2.1",
+	"pck": "https://github.com/KieKoongDev/mythsteel/releases/download/v0.2.1/Mythsteel.pck",
+	"exe": "https://github.com/KieKoongDev/mythsteel/releases/download/v0.2.1/Mythsteel.exe",
+	"notes": "Mythsteel v0.2.1: bows and crossbows aim true (side-on draw, arrows leave the bow)"
 }
